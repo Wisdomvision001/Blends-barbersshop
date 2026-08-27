@@ -1,0 +1,413 @@
+:root {
+  --fade-ink: #0d1113;
+  --fade-ink-soft: #121b1d;
+  --fade-ivory: #f2eee7;
+  --fade-sand: #d7c4a0;
+  --fade-mocha: #b8845a;
+  --fade-panel: rgba(16, 24, 27, 0.78);
+  --fade-panel-soft: rgba(255, 255, 255, 0.02);
+  --fade-line: rgba(215, 196, 160, 0.22);
+  --fade-shadow: rgba(0, 0, 0, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--fade-ink);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(184, 132, 90, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(82, 104, 110, 0.12), transparent 26%),
+    var(--fade-ink);
+  color: var(--fade-ivory);
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Inter", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display,
+[class*="font-display"] {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+p,
+li,
+span,
+label,
+small,
+button,
+a,
+input,
+select,
+textarea {
+  letter-spacing: 0.01em;
+}
+
+header,
+main,
+section,
+footer {
+  position: relative;
+}
+
+section > div,
+section > .mx-auto,
+header > div,
+footer > div {
+  position: relative;
+  z-index: 1;
+}
+
+header nav a,
+button,
+a[href*="#booking"],
+button[type="submit"] {
+  transition: transform 180ms ease, opacity 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+header nav a:hover,
+button:hover,
+a[href*="#booking"]:hover,
+button[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(215, 196, 160, 0.8);
+  outline-offset: 2px;
+}
+
+header {
+  border-bottom: 1px solid rgba(215, 196, 160, 0.12);
+  background: rgba(12, 17, 19, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+header nav {
+  align-items: center;
+  gap: clamp(0.8rem, 1.5vw, 2rem);
+}
+
+header nav a {
+  color: rgba(242, 238, 231, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+header nav a:hover {
+  color: var(--fade-ivory);
+}
+
+main {
+  background: transparent;
+}
+
+main > section,
+main > div > section {
+  padding-top: clamp(4rem, 7vw, 8rem);
+  padding-bottom: clamp(4rem, 7vw, 8rem);
+}
+
+#hero {
+  min-height: calc(100svh - 5rem);
+  padding-top: clamp(1.5rem, 3vw, 3rem);
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+  color: var(--fade-ivory);
+  line-height: 0.9;
+}
+
+main h1 {
+  font-size: clamp(3.75rem, 8.5vw, 12rem);
+  max-width: 1000px;
+  letter-spacing: -0.055em;
+}
+
+main h2 {
+  font-size: clamp(2.3rem, 4vw, 4.2rem);
+}
+
+main h3 {
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+}
+
+main p,
+main li,
+main label,
+main small {
+  color: rgba(242, 238, 231, 0.8);
+  line-height: 1.7;
+}
+
+button,
+button.secondary,
+button[class*="secondary"],
+button[class*="outline"],
+a[class*="outline"],
+button[variant="outline"] {
+  background: transparent !important;
+  color: var(--fade-ivory) !important;
+  border: 1px solid rgba(242, 238, 231, 0.22);
+  border-radius: 0.2rem;
+  box-shadow: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+a[href*="#booking"],
+button[type="submit"],
+button[class*="bg-copper"],
+button[class*="bg-\[\#"],
+[class*="bg-\[\#d4a174"] {
+  background: linear-gradient(180deg, #d9b287 0%, #c89263 100%) !important;
+  color: #171311 !important;
+  border: 1px solid rgba(217, 178, 135, 0.9);
+  border-radius: 0.2rem;
+  box-shadow: 0 10px 24px rgba(184, 132, 90, 0.12);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+button,
+a[href*="#booking"] {
+  padding: 0.9rem 1.3rem;
+}
+
+a[href*="#booking"]:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(180deg, #e2bd96 0%, #d5a06f 100%) !important;
+  color: #171311 !important;
+  box-shadow: 0 18px 24px rgba(184, 132, 90, 0.16);
+}
+
+button:hover {
+  border-color: rgba(215, 196, 160, 0.58);
+  background: rgba(242, 238, 231, 0.05) !important;
+}
+
+button[class*="bg-copper"]:hover,
+button[class*="bg-\[\#"]:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(180deg, #e2bd96 0%, #d5a06f 100%) !important;
+  color: #171311 !important;
+}
+
+button[class*="bg-copper"]:disabled,
+button[class*="bg-\[\#"]:disabled,
+button[type="submit"]:disabled {
+  background: #76513b !important;
+  border-color: #98745a;
+  color: var(--fade-ivory) !important;
+  opacity: 0.78;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+section + section,
+section + div,
+div + section {
+  border-top: 1px solid rgba(215, 196, 160, 0.12);
+}
+
+form input,
+form select,
+form textarea {
+  background: rgba(13, 17, 19, 0.7) !important;
+  border: 1px solid rgba(215, 196, 160, 0.18) !important;
+  border-radius: 0.6rem !important;
+  color: var(--fade-ivory) !important;
+  min-height: 3.25rem;
+  padding: 0.9rem 1rem !important;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(242, 238, 231, 0.45) !important;
+}
+
+select,
+textarea,
+input {
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: rgba(215, 196, 160, 0.5) !important;
+  box-shadow: 0 0 0 1px rgba(215, 196, 160, 0.16);
+}
+
+[class*="bg-petrol"],
+[class*="bg-ink"],
+[class*="bg-slate"],
+[class*="bg-charcoal"],
+main [class*="bg-petrol"],
+main [class*="bg-ink"],
+main [class*="bg-slate"],
+main [class*="bg-charcoal"] {
+  background-color: rgba(10, 14, 16, 0.85) !important;
+}
+
+[class*="text-bone"],
+[class*="text-sand"],
+[class*="text-ivory"],
+[class*="text-foreground"],
+[class*="text-neutral-"],
+[class*="text-stone-"] {
+  color: var(--fade-ivory) !important;
+}
+
+[class*="border-sand"],
+[class*="border-bone"],
+[class*="border-slate"],
+[class*="border-white/"],
+[class*="border-[rgba"] {
+  border-color: rgba(215, 196, 160, 0.18) !important;
+}
+
+#services > div:first-child,
+#craft > div:first-child,
+#work > div:first-child,
+#team > div:first-child,
+#reviews > div:first-child,
+#booking > div:first-child,
+#location > div:first-child {
+  margin-bottom: clamp(2.75rem, 6vw, 5rem);
+}
+
+#services > div:nth-child(2) > div,
+#team > div:nth-child(2) > div,
+#reviews > div:nth-child(2) > div {
+  border-color: rgba(242, 238, 231, 0.13) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#services h3,
+#team h3 {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+#services [class*="text-"],
+#team [class*="text-"] {
+  line-height: 1.55;
+}
+
+#work img,
+#team img,
+#experience img {
+  filter: saturate(0.82) contrast(1.04);
+  transition: filter 320ms ease, transform 500ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+#work a:hover img,
+#work div:hover > img,
+#team div:hover > img,
+#experience div:hover > img {
+  filter: saturate(1) contrast(1.04);
+  transform: scale(1.025);
+}
+
+#booking form {
+  border-top: 1px solid rgba(242, 238, 231, 0.14);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+#booking form label {
+  color: rgba(242, 238, 231, 0.62);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+#booking form input,
+#booking form select,
+#booking form textarea {
+  border-radius: 0.2rem !important;
+}
+
+@media (max-width: 767px) {
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(184, 132, 90, 0.08), transparent 22%),
+      var(--fade-ink);
+  }
+
+  header nav {
+    gap: 0.55rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  header nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  header nav a {
+    letter-spacing: 0.12em;
+    font-size: 0.58rem;
+  }
+
+  main > section,
+  main > div > section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  main h1 {
+    font-size: clamp(3.2rem, 15vw, 5.5rem);
+  }
+
+  #services > div:nth-child(2) > div,
+  #team > div:nth-child(2) > div {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
