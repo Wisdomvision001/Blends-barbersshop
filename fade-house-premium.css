@@ -139,6 +139,33 @@ main > div > section {
   padding-top: clamp(1.5rem, 3vw, 3rem);
 }
 
+#hero > div:first-child {
+  background: var(--fade-ink);
+}
+
+#hero > div:first-child > .fade-house-hero-image {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: 0;
+  display: block;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+#hero > div:first-child::after {
+  position: absolute;
+  inset: 0 0 0 38%;
+  content: "";
+  background:
+    linear-gradient(90deg, var(--fade-ink) 0%, rgba(13, 17, 19, 0.78) 16%, rgba(13, 17, 19, 0.12) 62%, rgba(13, 17, 19, 0.3) 100%),
+    linear-gradient(180deg, rgba(13, 17, 19, 0.08) 35%, rgba(13, 17, 19, 0.72) 100%);
+  opacity: 0.88;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
 main h1,
 main h2,
 main h3,
@@ -391,6 +418,19 @@ main [class*="bg-charcoal"] {
 
   main h1 {
     font-size: clamp(3.2rem, 15vw, 5.5rem);
+  }
+
+  #hero > div:first-child::after {
+    inset: 18% 0 0;
+    background:
+      linear-gradient(180deg, rgba(13, 17, 19, 0.24) 0%, var(--fade-ink) 78%);
+    opacity: 0.58;
+    mix-blend-mode: normal;
+  }
+
+  #hero > div:first-child > .fade-house-hero-image {
+    width: 100%;
+    object-position: 72% 25%;
   }
 
   #services > div:nth-child(2) > div,

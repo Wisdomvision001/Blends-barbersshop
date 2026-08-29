@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <title>Fade House | Premium Barbershop in Houston, TX</title>
+  <title>Blends Barbershop | Premium Barbershop in Houston, TX</title>
   <meta name="description"
-    content="Precision fades, classic cuts, and the full barbershop experience. Book your chair at Fade House — Houston's premium destination for men's grooming." />
+    content="Precision fades, classic cuts, and the full barbershop experience. Book your chair at Blends Barbershop — Houston's premium destination for men's grooming." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Fade House | Premium Barbershop in Houston, TX" />
+  <meta property="og:title" content="Blends Barbershop | Premium Barbershop in Houston, TX" />
   <meta property="og:description"
-    content="Precision fades, classic cuts, and the full barbershop experience. Book your chair at Fade House." />
+    content="Precision fades, classic cuts, and the full barbershop experience. Book your chair at Blends Barbershop." />
 
   <!-- Fonts: Playfair Display (serif/display) + Inter (sans-serif/body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,10 +29,34 @@
   <link rel="modulepreload" crossorigin href="/assets/framer-motion-DJuh8fP3.js">
   <link rel="modulepreload" crossorigin href="/assets/radix-ui-8vw8zmWx.js">
   <link rel="stylesheet" crossorigin href="/assets/index-sZow1R_d.css">
+  <link rel="stylesheet" href="/fade-house-premium.css">
 </head>
 
 <body>
   <div id="root"></div>
+  <script>
+    (() => {
+      const renderHeroImage = () => {
+        const hero = document.querySelector("#hero");
+        const backgroundLayer = hero?.firstElementChild;
+        const existingBackground = backgroundLayer?.firstElementChild;
+
+        if (!backgroundLayer || !existingBackground || existingBackground.tagName === "IMG") {
+          return;
+        }
+
+        const image = document.createElement("img");
+        image.src = "/images/fade-house-hero.png";
+        image.alt = "";
+        image.className = "fade-house-hero-image";
+        backgroundLayer.replaceChild(image, existingBackground);
+      };
+
+      const observer = new MutationObserver(renderHeroImage);
+      observer.observe(document.body, { childList: true, subtree: true });
+      renderHeroImage();
+    })();
+  </script>
 </body>
 
 </html>
