@@ -22,10 +22,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload working site
+      - name: Prepare working website
+        run: |
+          mkdir -p pages
+          cp -r isolate/. pages/
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./isolate
+          path: ./pages
 
   deploy:
     environment:
