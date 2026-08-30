@@ -15,32 +15,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare working website
-        run: |
-          mkdir -p pages
-          cp -r isolate/. pages/
-
-      - name: Upload Pages artifact
+      - name: Upload working site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./pages
+          path: .
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
