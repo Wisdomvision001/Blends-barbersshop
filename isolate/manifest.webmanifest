@@ -1,17 +1,18 @@
 {
-  "name": "freebuff.com application",
-  "short_name": "freebuff.com",
-  "description": "freebuff.com application",
-  "start_url": "/",
+  "name": "Blends Barbershop",
+  "short_name": "Blends",
+  "description": "Blends Barbershop - Premium Barbershop",
+  "start_url": "/Blends-barbersshop/",
+  "scope": "/Blends-barbersshop/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#111111",
+  "theme_color": "#111111",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/Blends-barbersshop/assets/logo.svg",
       "sizes": "any",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ]
 }
